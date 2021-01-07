@@ -71,6 +71,7 @@ public class Main extends Application
                     }
                     label.setText("" + result);
                 }
+                else{label.setText(label.getText() + s);}
             }
         };
 
