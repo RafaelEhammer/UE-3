@@ -46,6 +46,7 @@ public class Main extends Application
                     values[currentIndex] = Integer.parseInt(label.getText());
                     label.setText("");
                     operators.add(s);
+                    System.out.println(operators.get(0));
                 }
                 else if(s.equals("="))
                 {
@@ -56,17 +57,19 @@ public class Main extends Application
                     }
                     if (values[0]!=0)
                     {
+                        int i = 0;
                         result = values[0];
-                        for (int i = 1; i < values.length; i++)
+                        while (values[i + 1] != 0)
                         {
-                            if (operators.get(i-1).equals("+"))
+                            if (operators.get(i).equals("+"))
                             {
                                 result += values[i];
                             }
-                            else if (operators.get(i-1).equals("-"))
+                            else if (operators.get(i).equals("-"))
                             {
                                 result -= values[i];
                             }
+                            i++;
                         }
                     }
                     label.setText("" + result);
