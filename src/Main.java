@@ -46,7 +46,7 @@ public class Main extends Application
                     values[currentIndex] = Integer.parseInt(label.getText());
                     label.setText("");
                     operators.add(s);
-                    System.out.println(operators.get(0));
+                    currentIndex++;
                 }
                 else if(s.equals("="))
                 {
@@ -63,11 +63,11 @@ public class Main extends Application
                         {
                             if (operators.get(i).equals("+"))
                             {
-                                result += values[i];
+                                result += values[i + 1];
                             }
                             else if (operators.get(i).equals("-"))
                             {
-                                result -= values[i];
+                                result -= values[i + 1];
                             }
                             i++;
                         }
